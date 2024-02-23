@@ -1,0 +1,7 @@
+name: json-logging-test
+runtime: java
+description: A basic Java app for creating some testing logging data that ends up in AWS OpenSearch
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-java

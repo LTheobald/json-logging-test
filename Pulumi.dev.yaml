@@ -1,0 +1,2 @@
+config:
+  aws:region: pulumi config set aws:skipMetadataApiCheck false
