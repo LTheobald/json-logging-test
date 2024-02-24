@@ -15,7 +15,7 @@ import org.springframework.boot.autoconfigure.gson.GsonBuilderCustomizer;
 
 public class PulumiInfrastructure {
 
-  public static void main(String... args) {
+  public static void run() {
     Pulumi.run(ctx -> {
       // ECR repo to store Docker images
       var repository = new Repository("json-logging-ecr-repository", RepositoryArgs.builder()
@@ -37,7 +37,7 @@ public class PulumiInfrastructure {
 
       // Define a Task Definition for the Fargate service
       // The container image should be in the ECR repository created earlier
-      var taskDefinition = new TaskDefinßßition("app-task", TaskDefinitionArgs.builder()
+      /*var taskDefinition = new TaskDefinßßition("app-task", TaskDefinitionArgs.builder()
           .family("json-logging-app")
           .cpu("256") // 256 CPU units
           .memory("512") // 512 MiB
@@ -46,9 +46,9 @@ public class PulumiInfrastructure {
           .executionRoleArn(taskExecutionRoleArn)
           .containerDefinitions(Output.of(repository.repositoryUrl())
               .apply(url -> String.format(
-                  "["+ containerInfo.toString() +"]",
+                  "[]",
                   url))
-          ).build());
+          ).build());*/
     });
   }
 }
